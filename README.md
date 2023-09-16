@@ -28,7 +28,7 @@ For Debian, please refer **Senshi111**'s version [here](https://github.com/Sensh
 After minimal Arch install (with grub), clone and execute -
 ```shell
 pacman -Sy git
-https://github.com/jpx40/hyprdots ~/Hyprdots
+git clone https://github.com/jpx40/hyprdots ~/Hyprdots
 cd ~/Hyprdots/Scripts
 ./install.sh
 ```
