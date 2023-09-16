@@ -113,7 +113,7 @@ flatpak --user override --env=ICON_THEME="${IconSet}"
 
 
 # rofi
-ln -fs $ConfDir/rofi/themes/${ThemeSet}.rasi $ConfDir/rofi/themes/theme.rasi
+#ln -fs $ConfDir/rofi/themes/${ThemeSet}.rasi $ConfDir/rofi/themes/theme.rasi
 
 
 # hyprland
