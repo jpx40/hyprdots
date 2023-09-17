@@ -19,6 +19,17 @@ cat << "EOF"
 EOF
 
 
+function yes_or_no {
+    while true; do
+        read -p "$* [y/n]: " yn
+        case $yn in
+            [Yy]*) return 0  ;;  
+            [Nn]*) echo "Aborted" ; return  1 ;;
+        esac
+    done
+}
+
+
 #--------------------------------#
 # import variables and functions #
 #--------------------------------#
@@ -123,8 +134,9 @@ cat << "EOF"
 
 EOF
 
-    ./restore_fnt.sh
-    ./restore_cfg.sh
+        message="Restore Font"
+        yes_or_no "$message" && ./restore_fnt.sh
+        ./restore_cfg.sh
 fi
 
 
@@ -132,7 +144,8 @@ fi
 # update sddm, grub and zsh #
 #---------------------------#
 if [ $flg_Install -eq 1 ] && [ $flg_Restore -eq 1 ] ; then
-    ./restore_sgz.sh
+         message="update sddm, grub and zsh"
+         yes_or_no "$message" && ./restore_sgz.sh
 fi
 
 
