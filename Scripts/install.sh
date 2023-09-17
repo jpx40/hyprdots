@@ -136,7 +136,10 @@ EOF
 
         message="Restore Font"
         yes_or_no "$message" && ./restore_fnt.sh
-        ./restore_cfg.sh
+
+        
+        message="Restore Config"
+        yes_or_no "$message" && ./restore_cfg.sh
 fi
 
 
