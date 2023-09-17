@@ -15,6 +15,7 @@ window {
   border-radius: 10px;
   background-color: #282738;
 
+// Main //
 }
 
 mainbox {
@@ -58,82 +59,79 @@ element {
   background: transparent;
   children: [ element-icon, element-text ];
 }
-element,element-text,element-icon, button {
-    cursor: pointer;
+button {
+    cursor:                      pointer;
+    border-radius:               50px;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+button selected {
+    background-color:            @foreground;
+    text-color:                  @background;
 }
 
-inputbar {
-  margin: 0px 10px;
-  spacing: 0.4em;
-  border-color: #282738;
-  border:        5px;
-  background-color: #282738;
-  children: [entry,overlay,case-indicator];
-}
 
-
-listview, message {
-  padding: 0.5em;
-  border-color: #282738;
-  border:        5px;
-  border-radius: 10px;
-  background-color: #282738;
-
-  columns: 1;
-  lines:   8;
+// Lists //
+listbox {
+    spacing:                     10px;
+    padding:                     30px;
+    children:                    [ "listview" ];
+    background-color:            @background;
 }
 listview {
-  border:       0px 5px 5px 5px;
-  border-radius: 10px 10px 10px 10px;
-  spacing: 10px;
-  background-color: #282738;
-  border-color:     #282738;
-  scrollbar:    true;
+    enabled:                     true;
+    columns:                     1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @foreground;
 }
 
 
 element {
-    border:  5px;
-    border-radius: 5px;
-    padding: 5px;
-    border-color: #282738;
+    enabled:                     true;
+    spacing:                     30px;
+    padding:                     8px;
+    border-radius:               20px;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @foreground;
 }
-element-text {
-    background-color: #282738;
-    text-color:       #FFFFFF;
-    font: "JetBrains Mono Medium";
-}
-
 element normal.normal {
-    background-color: #282738;
-    text-color:       #E5B9C6;
+    background-color:            transparent;
+    text-color:                  @normal-foreground;
 }
-element.normal.urgent {
-    background-color: #282738;
-    text-color:       #E5B9C6;
+element normal.urgent {
+    background-color:            @urgent-background;
+    text-color:                  @urgent-foreground;
 }
-element.normal.active {
-    background-color: #282738;
-    text-color:       #E5B9C6;
+element normal.active {
+    background-color:            @active-background;
+    text-color:                  @active-foreground;
 }
-element.selected.normal {
-    background-color: #E5B9C6;
-    border-color: #E5B9C6;
-    text-color:       #E5B9C6;
+element selected.normal {
+    background-color:            @selected-normal-background;
+    text-color:                  @selected-normal-foreground;
 }
-element.selected.urgent {
-    background-color: #E5B9C6;
-    border-color: #E5B9C6;
-    text-color:       #E5B9C6;
+element selected.urgent {
+    background-color:            @selected-urgent-background;
+    text-color:                  @selected-urgent-foreground;
 }
-element.selected.active {
-    background-color: #E5B9C6;
-    border-color: #E5B9C6;
-    text-color:       #E5B9C6;
+element selected.active {
+    background-color:            @selected-active-background;
+    text-color:                  @selected-active-foreground;
 }
-element.alternate.normal {
-    background-color: #282738;
-    text-color:       #E5B9C6;
+element-icon {
+    size:                        48px;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
 }
 element.alternate.urgent {
     background-color: #282738;
