@@ -58,6 +58,8 @@ openssh
 fcron
 systemd
 python3
+gcc
+
 
 
 
