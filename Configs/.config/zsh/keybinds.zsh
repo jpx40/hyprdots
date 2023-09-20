@@ -2,6 +2,13 @@
 ## Keybindings
 ##
 
+
+
+# ohmyzsh like completion
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+
+
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 bindkey -s '^K' 'ls^M'
